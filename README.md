@@ -7,11 +7,11 @@ On a linux desktop get the UBports installer:
 `user@ubuntu-desktop$ snap install ubports-installer`  
 ... and then run it  
 `user@ubuntu-desktop$ ubports-installer`  
-See [alternative methods](https://github.com/ubports/ubports-installer/) if you do not have snap.
+See [alternative methods](https://github.com/ubports/ubports-installer/) if snap is not an option.
 
 Once UT is running on the device, go in Settings => About and activate Developer Mode. You will need to set a passcode for Developer Mode
 
-From the desktop connect through adb or ssh to the device:
+From the desktop connect through adb or ssh to the device:  
 `user@ubuntu-desktop$ adb shell`  
 
 Create a container
@@ -24,7 +24,7 @@ Install Java
 `phablet@ubuntu-phablet:~$ libertine-container-manager exec -i openhab -c bash`  
 `root@ubuntu-phablet:/# apt-get install openjdk-8-jdk`  
 
-For Oracle JDK:
+For Oracle JDK:  
 `root@ubuntu-phablet:/# wget https://download.oracle.com/otn-pub/java/jdk/8u201-b09/42970487e3af4f5aa5bca3f542482c60/jdk-8u201-linux-arm32-vfp-hflt.tar.gz`  
 `root@ubuntu-phablet:/# tar zxvf jdk-8-linux-arm32-vfp-hflt.tar.gz -C /opt`  
 `root@ubuntu-phablet:/# update-alternatives --install /usr/bin/javac javac /opt/jdk1.8.0/bin/javac 1`  
@@ -52,7 +52,7 @@ Point the Nexus 5 browser to:
 ![OpenHAB@Nexus](screenshot.jpg)
 
 Configuration files for OpenHAB are stored in /home/phablet/.cache/libertine-container/xenial/rootfs/etc/openhab2/.
-To use scp (or WinSCP) to access this folder from the desktop, configure ssh:
+To use scp (or WinSCP) to access this folder from the desktop, configure ssh:  
 `user@ubuntu-desktop$ ssh-keygen`  
 `user@ubuntu-desktop$ adb push ~/.ssh/id_rsa.pub /home/phablet/`  
 `user@ubuntu-desktop$ adb shell`  
